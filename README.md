@@ -1,5 +1,7 @@
 # FinClear (ClearPath Finance)
+
 ![演示图](demo.gif)
+
 > **Tackling Ethical Dilemmas in AI-Powered Finance: Fairness, Bias, and Inclusive Access**
 
 FinClear is an AI-powered financial guardian designed to democratize financial literacy and protect vulnerable consumers from predatory lending. By prioritizing transparency, inclusivity, and privacy, FinClear bridges the gap between complex financial jargon and everyday consumers.
