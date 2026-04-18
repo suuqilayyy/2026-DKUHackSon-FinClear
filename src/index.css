@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  [data-theme="minimalist"] {
+    --background: 0 0% 100%;
+    --foreground: 215 28% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 12%;
+
+    --primary: 220 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 96%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 15% 47%;
+
+    --accent: 215 20% 93%;
+    --accent-foreground: 215 25% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 14%;
+
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 45%;
+
+    --radius: 0.5rem;
+
+    /* Theme-specific tokens */
+    --content-bg: 210 20% 98%;
+    --content-bg-to: 210 20% 98%;
+    --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+    --card-radius: 0.5rem;
+    --heading-weight: 600;
+
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 215 25% 27%;
+    --sidebar-primary: 220 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 94%;
+    --sidebar-accent-foreground: 215 25% 15%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 70% 45%;
+    --sidebar-muted: 215 15% 55%;
+  }
+
+  /* Theme B: Playful Pastel */
+  [data-theme="pastel"] {
+    --background: 40 30% 97%;
+    --foreground: 240 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 260 60% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 40% 95%;
+    --secondary-foreground: 340 30% 30%;
+
+    --muted: 45 30% 93%;
+    --muted-foreground: 240 8% 45%;
+
+    --accent: 160 40% 92%;
+    --accent-foreground: 160 30% 20%;
+
+    --destructive: 350 65% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 45 90% 55%;
+    --warning-foreground: 45 90% 15%;
+
+    --success: 155 55% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 260 20% 88%;
+    --input: 260 20% 88%;
+    --ring: 260 60% 65%;
+
+    --radius: 1rem;
+
+    --content-bg: 40 30% 97%;
+    --content-bg-to: 340 30% 97%;
+    --card-shadow: 0 4px 20px -4px rgb(0 0 0 / 0.08);
+    --card-radius: 1.25rem;
+    --heading-weight: 800;
+
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 240 10% 25%;
+    --sidebar-primary: 260 60% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 340 30% 95%;
+    --sidebar-accent-foreground: 240 10% 20%;
+    --sidebar-border: 260 15% 90%;
+    --sidebar-ring: 260 60% 65%;
+    --sidebar-muted: 240 8% 50%;
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 215 20% 85%;
+
+    --card: 230 20% 8%;
+    --card-foreground: 215 20% 85%;
+
+    --popover: 230 20% 8%;
+    --popover-foreground: 215 20% 85%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 215 20% 85%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 220 15% 15%;
+    --accent-foreground: 215 20% 85%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 15%;
+    --input: 220 15% 15%;
+    --ring: 220 70% 50%;
+
+    --sidebar-background: 230 30% 4%;
+    --sidebar-foreground: 215 15% 65%;
+    --sidebar-primary: 220 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 100% / 0.05;
+    --sidebar-ring: 220 70% 50%;
+    --sidebar-muted: 215 15% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--heading-weight, 600);
+    @apply tracking-tight;
+  }
+}
+
+/* Global Stealth Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.08) transparent;
+}
+
+/* Print styles for revision report */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-report,
+  .print-report * {
+    visibility: visible;
+  }
+  .print-report {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #000;
+    padding: 0;
+    background: white;
+  }
+  .clause-revision {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    break-inside: avoid;
+  }
+  .original {
+    background: #fef2f2 !important;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .suggestion {
+    background: #f0fdf4 !important;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .footer {
+    margin-top: 40px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+  }
+  .signature-area {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+  }
+}
